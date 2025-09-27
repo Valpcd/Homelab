@@ -17,3 +17,6 @@
 - Deploying development or **testing** environments.
 - Homelab or data center infrastructure.
 - Centralized management of virtual machines and containers for production.
+
+## Proxmox VE web UI
+![Proxmox interface preview](image.png)
