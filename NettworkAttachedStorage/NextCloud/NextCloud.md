@@ -24,3 +24,8 @@
 
 ## Nexcloud Client (Android app)
 ![alt text](Screenshot_Nextcloud.png)
+
+## Good Practices with nextcloud
+- Configure a failure-resilient storage pool such as RAID1
+- Do not use an admin acount for conventionnal use of NexctCloud
+- Setup https (See "Nginx Proxy Manager" section)
