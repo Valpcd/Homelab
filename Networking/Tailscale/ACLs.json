@@ -1,0 +1,19 @@
+{
+  "ACLs": [
+    {
+      "Action": "accept",
+      "Users": ["group:clients"],
+      "Ports": ["group:servers:*"]
+    }
+  ],
+  "Groups": {
+    "group:clients": ["user:client1@example.com", "user:client2@example.com"],
+    "group:servers": ["user:server1@example.com", "user:server2@example.com"]
+  },
+  "TagOwners": {
+    "tag:server": ["user:server1@example.com", "user:server2@example.com"]
+  },
+  "Hosts": {},
+  "ACLDefaultAction": "deny",
+  "TagACLs": {}
+}
