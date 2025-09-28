@@ -18,4 +18,4 @@ It offers a robust platform for managing, storing, and sharing data securely and
 - Centralizing storage for a home or small office network.
 
 ## My opinion
-Very well known OS in the world of the self-hosting community, and for a good reason. To me, TrueNAS make the best compromise between user-friendly interface for beginner and advanced features.
+A very well-known OS in the self-hosting community, and for good reason. To me, TrueNAS makes the best compromise between a user-friendly interface and advanced features.
