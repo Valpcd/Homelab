@@ -1,0 +1,31 @@
+volumes:
+  nextcloud:   # Persistent volume for Nextcloud files
+  db:          # Persistent volume for MariaDB data
+
+services:
+  db:
+    image: mariadb:10.6
+    restart: always
+    command: --transaction-isolation=READ-COMMITTED --log-bin=binlog --binlog-format=ROW
+    volumes:
+      - db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=exampleRootPassword   # ⚠️ Replace with a strong root password
+      - MYSQL_PASSWORD=exampleUserPassword        # ⚠️ Password for the Nextcloud database user
+      - MYSQL_DATABASE=nextcloud_db               # Database name used by Nextcloud
+      - MYSQL_USER=nextcloud_user                 # Database user for Nextcloud
+
+  app:
+    image: nextcloud
+    restart: always
+    ports:
+      - 8080:80   # Nextcloud Web UI will be available at http://localhost:8080
+    links:
+      - db
+    volumes:
+      - nextcloud:/var/www/html   # Persistent storage for Nextcloud application files
+    environment:
+      - MYSQL_PASSWORD=exampleUserPassword   # MUST match the one defined in the db service
+      - MYSQL_DATABASE=nextcloud_db
+      - MYSQL_USER=nextcloud_user
+      - MYSQL_HOST=db   # Hostname of the database service (same as the service name above)

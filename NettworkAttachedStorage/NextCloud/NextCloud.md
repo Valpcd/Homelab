@@ -29,3 +29,7 @@
 - Configure a failure-resilient storage pool such as RAID1
 - Do not use an admin acount for conventionnal use of NexctCloud
 - Setup https (See "Nginx Proxy Manager" section)
+
+## My opinion
+Nextcloud is a very complete suite that can be customized depending on your needs. Personally, I only use it for file storage, not for video conferencing or calendar features. 
+However, it can be a bit confusing at first to figure out which implementation to choose: Nextcloud AIO, NextcloudPi, the official version, or third-party builds. I tried all of them, but in the end I opted for a Docker stack (docker-compose.yaml)
